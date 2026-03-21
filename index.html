@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>SpecsTackle | Browse Latest Smartphone Releases and Specifications</title>
+  <meta name="description" content="One stop place to browse latest smartphone releases, specifications and features. Filter by brand, year, and specs to find your perfect device.">
+  <link rel="canonical" href="https://specstackle.top">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://specstackle.top">
+  <meta property="og:title" content="SpecsTackle | Browse Latest Smartphone Releases and Specifications">
+  <meta property="og:description" content="Browse latest smartphone releases, specifications and features.">
+  <meta property="og:image" content="https://specstackle.top/images/og-image.webp">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SpecsTackle | Browse Latest Smartphone Releases and Specifications">
+  <meta name="twitter:description" content="Browse latest smartphone releases, specifications and features.">
+  <meta name="twitter:image" content="https://specstackle.top/images/og-image.webp">
+
+  <link rel="icon" href="apple-touch-icon.png" type="image/png">
+  <link rel="preload" href="fonts/outfit.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles/index.css">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "SpecsTackle",
+      "url": "https://specstackle.top",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://specstackle.top/?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+  </script>
+  <!-- Added Theme Initialization Script -->
+  <script>
+    const savedTheme = localStorage.getItem('specstackle_theme');
+    const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+    if (savedTheme === 'light' || (!savedTheme && prefersLight)) {
+      document.documentElement.classList.add('light-theme');
+    }
+  </script>
+</head>
+</head>
+
+<body>
+
+  <header>
+    <nav>
+      <a href="#" class="logo">SPECSTACKLE</a>
+      <div class="nav-links">
+        <a href="blogs/index.html">Blogs</a>
+        <a href="#">Surprise</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>SPECSTACKLE</h1>
+      <p>Your one stop site for the latest smartphone news and releases.</p>
+    </section>
+
+    <section class="controls-container">
+      <input type="search" id="searchInput" class="search-input" placeholder="Search devices (e.g. C83, Galaxy)...">
+
+      <select id="brandFilter" class="filter-select" aria-label="Select Brand">
+        <option value="all">All Brands</option>
+        <option value="Realme">Realme</option>
+        <option value="Samsung">Samsung</option>
+        <option value="Apple">Apple</option>
+        <option value="Xiaomi">Xiaomi</option>
+        <option value="Huawei">Huawei</option>
+        <option value="Oppo">Oppo</option>
+        <option value="Infinix">Infinix</option>
+        <option value="Itel">Itel</option>
+        <option value="Honor">Honor</option>
+        <option value="Poco">Poco</option>
+        <option value="Nothing">Nothing</option>
+        <option value="Google">Google</option>
+        <option value="Nubia">Nubia</option>
+        <option value="Motorola">Motorola</option>
+      </select>
+
+      <select id="yearFilter" class="filter-select" aria-label="Select Year">
+        <option value="2026" selected>Year 2026</option>
+        <option value="2025">Year 2025</option>
+      </select>
+    </section>
+
+    <section class="grid-container" id="phoneGrid">
+      <!-- Skeleton loaders always in DOM, hidden by default -->
+      <div class="skeleton-card"></div>
+      <div class="skeleton-card"></div>
+      <div class="skeleton-card"></div>
+      <div class="skeleton-card"></div>
+      <div class="skeleton-card"></div>
+      <div class="skeleton-card"></div>
+    </section>
+
+    <div id="pagination" class="pagination-container">
+      <button class="pagination-btn" id="prevPage">
+        PREV
+      </button>
+
+      <div class="pagination-info">
+        Page <span id="currentPageNum">1</span> of <span id="totalPageNum">1</span>
+      </div>
+
+      <button class="pagination-btn" id="nextPage">
+        NEXT
+      </button>
+    </div>
+  </main>
+
+  <footer>
+    <div class="f-links">
+      <a href="pages/about.html">About</a>
+      <a href="pages/contact.html">Contact</a>
+      <a href="pages/privacy.html">Privacy</a>
+      <a href="pages/terms.html">Terms</a>
+    </div>
+
+    <p class="copy">&copy; <span id="year"></span> SPECSTACKLE. ALL RIGHTS RESERVED.</p>
+
+    <!-- Added Theme Toggle -->
+    <div class="theme-toggle-wrapper">
+      <button id="themeToggle" class="theme-toggle" aria-label="Toggle Theme"></button>
+    </div>
+  </footer>
+
+  <script type="module" src="scripts/index.js" defer></script>
+</body>
+
+</html>

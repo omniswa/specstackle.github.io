@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Contact | SpecsTackle - Get in Touch</title>
+  <meta name="description" content="Contact SpecsTackle. Have questions, suggestions, or need support? Reach out to our team. We'd love to hear from you.">
+  <link rel="canonical" href="https://specstackle.top/pages/contact.html">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://specstackle.top/pages/contact.html">
+  <meta property="og:title" content="Contact SpecsTackle">
+  <meta property="og:description" content="Get in touch with SpecsTackle. Send us your questions and feedback.">
+
+  <link rel="icon" href="apple-touch-icon.png" type="image/png">
+  <link rel="preload" href="../fonts/outfit.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../styles/index.css">
+  <script>
+    const savedTheme = localStorage.getItem('specstackle_theme');
+    const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+    if (savedTheme === 'light' || (!savedTheme && prefersLight)) {
+      document.documentElement.classList.add('light-theme');
+    }
+  </script>
+  <style>
+    .contact-header {
+      max-width: 900px;
+      margin: 60px auto 40px;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .contact-header h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+      line-height: 1.2;
+      color: var(--text-main);
+    }
+
+    .contact-header p {
+      color: var(--text-muted);
+      font-size: 1rem;
+      line-height: 1.6;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .contact-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 20px 80px 20px;
+    }
+
+    .contact-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 60px;
+    }
+
+    .contact-form-section h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--text-main);
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .contact-form-section h2::before {
+      content: '';
+      display: block;
+      width: 4px;
+      height: 4px;
+      background: var(--accent);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--text-main);
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 12px 16px;
+      background: var(--input-bg);
+      border: 1px solid var(--border);
+      color: var(--text-main);
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-family: 'Outfit', Arial, sans-serif;
+      outline: none;
+      transition: all var(--transition);
+      box-shadow: 0 2px 10px rgb(0 0 0 / .05);
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: var(--text-placeholder);
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      border-color: var(--accent);
+      background: var(--input-bg-focus);
+      box-shadow: 0 0 0 4px var(--accent-dim);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 140px;
+      line-height: 1.5;
+    }
+
+    .form-group select {
+      appearance: none;
+      background-image: url(data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23a1a1a1%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E);
+      background-repeat: no-repeat;
+      background-position: right 16px top 50%;
+      background-size: 10px auto;
+      padding-right: 40px;
+      cursor: pointer;
+    }
+
+    .form-submit {
+      width: 100%;
+      padding: 14px 24px;
+      background: var(--accent);
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all var(--transition);
+      margin-top: 8px;
+      font-family: 'Outfit', Arial, sans-serif;
+    }
+
+    .form-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(56, 189, 248, 0.2);
+    }
+
+    .form-submit:active {
+      transform: translateY(0);
+    }
+
+    .form-message {
+      padding: 12px 16px;
+      border-radius: 8px;
+      margin-top: 16px;
+      font-size: 0.9rem;
+      display: none;
+    }
+
+    .form-message.success {
+      background: rgba(34, 197, 94, 0.1);
+      border: 1px solid rgba(34, 197, 94, 0.3);
+      color: #22c55e;
+      display: block;
+    }
+
+    .form-message.error {
+      background: rgba(239, 68, 68, 0.1);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      color: #ef4444;
+      display: block;
+    }
+
+    .faq-section {
+      max-width: 900px;
+      margin: 60px auto 0;
+
+    }
+
+    .faq-section h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--text-main);
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .faq-section h2::before {
+      content: '';
+      display: block;
+      width: 4px;
+      height: 4px;
+      background: var(--accent);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .faq-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 16px;
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+
+    .faq-item:hover {
+      border-color: var(--border-hover);
+      background: var(--bg-card-hover);
+    }
+
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      color: var(--text-main);
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .faq-toggle {
+      color: var(--accent);
+      font-size: 1.2rem;
+      transition: transform 0.3s;
+      flex-shrink: 0;
+    }
+
+    .faq-item.active .faq-toggle {
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin-top: 16px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 500px;
+    }
+
+    @media (max-width:768px) {
+      .contact-container {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .contact-header h1 {
+        font-size: 2rem;
+      }
+
+      .contact-form-section h2 {
+        font-size: 1.2rem;
+      }
+    }
+
+    @media (max-width:640px) {
+      .contact-header {
+        margin-top: 40px;
+      }
+
+      .contact-wrapper {
+        padding: 0 20px 60px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav>
+      <a href="../index.html" class="logo">SPECSTACKLE</a>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a href="../blogs/index.html">Blogs</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="contact-header">
+      <h1>Get in Touch</h1>
+      <p>Have questions about SpecsTackle? Found inaccurate information? Or just want to share your feedback? We'd love to hear from you. Reach out anytime!</p>
+    </div>
+
+    <div class="contact-wrapper">
+      <div class="contact-container">
+
+        <!-- Contact Form -->
+        <div class="contact-form-section">
+          <h2>Send us a Message</h2>
+          <form id="contactForm">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" placeholder="Your name" required>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="your@email.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <select id="subject" name="subject" required>
+                <option value="">Select a subject...</option>
+                <option value="general">General Inquiry</option>
+                <option value="data">Data Correction</option>
+                <option value="partnership">Partnership</option>
+                <option value="support">Technical Support</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Tell us what's on your mind..." required></textarea>
+            </div>
+
+            <button type="submit" class="form-submit">Send Message</button>
+            <div id="formMessage" class="form-message"></div>
+          </form>
+        </div>
+
+
+      </div>
+
+      <!-- FAQ Section -->
+      <section class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>How accurate is your device data?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>We maintain a 99.9% data accuracy rate. All specifications are sourced from official manufacturers and verified through multiple channels. If you find an error, please report it to data@specstackle.top and we'll correct it immediately.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>How often is the database updated?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>We update our database continuously as new devices are announced and released. New flagship devices are typically added within 24 hours of official announcement, while mid-range and budget devices are added within 1-2 weeks.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Can I use your data commercially?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Our content is protected by copyright and is for personal, non-commercial use only. For commercial licensing or partnership inquiries, please contact partnerships@specstackle.top to discuss options.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>How do you handle user privacy?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Your privacy is our top priority. We don't sell or share your personal data. Your theme preference is stored locally on your device. For detailed information, please read our <a href="privacy.html" style="color:var(--accent);">Privacy Policy</a>.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Which brands do you cover?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>We currently track over many brands including Apple, Samsung, Google, OnePlus, Xiaomi, Motorola, Realme, OPPO, Vivo, Nothing, and many others. If you'd like us to add a specific brand, please reach out to us.</p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="f-links">
+      <a href="about.html">About</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <p class="copy">&copy; <span id="year"></span> SPECSTACKLE. ALL RIGHTS RESERVED.</p>
+
+    <div class="theme-toggle-wrapper">
+      <button id="themeToggle" class="theme-toggle" aria-label="Toggle Theme"></button>
+    </div>
+  </footer>
+
+  <script>
+    // Year in footer
+    document.getElementById("year").innerHTML = new Date().getFullYear();
+
+    // Contact Form Handler
+    const contactForm = document.getElementById('contactForm');
+    const formMessage = document.getElementById('formMessage');
+
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const subject = document.getElementById('subject').value;
+      const message = document.getElementById('message').value;
+
+      // Show success message (in production, this would send to a server)
+      formMessage.textContent = 'Thank you for your message! We\'ll get back to you soon.';
+      formMessage.className = 'form-message success';
+
+      // Reset form
+      contactForm.reset();
+
+      // Clear message after 5 seconds
+      setTimeout(() => {
+        formMessage.textContent = '';
+        formMessage.className = 'form-message';
+      }, 5000);
+
+      // In production, you would send the form data to your backend:
+      // const response = await fetch('/api/contact', {
+      //   method: 'POST',
+      //   headers: { 'Content-Type': 'application/json' },
+      //   body: JSON.stringify({ name, email, subject, message })
+      // });
+    });
+
+    // FAQ Accordion Handler
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+      item.addEventListener('click', () => {
+        // Close other items
+        faqItems.forEach(other => {
+          if (other !== item) {
+            other.classList.remove('active');
+          }
+        });
+        // Toggle current item
+        item.classList.toggle('active');
+      });
+    });
+
+    // Theme toggle functionality
+    const themeToggleBtn = document.getElementById('themeToggle');
+
+    const sunIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>`;
+    const moonIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>`;
+
+    function updateThemeUI() {
+      const isLight = document.documentElement.classList.contains('light-theme');
+      if (isLight) {
+        themeToggleBtn.innerHTML = `${moonIcon} Dark Mode`;
+      } else {
+        themeToggleBtn.innerHTML = `${sunIcon} Light Mode`;
+      }
+    }
+
+    updateThemeUI();
+
+    themeToggleBtn.addEventListener('click', () => {
+      document.documentElement.classList.toggle('light-theme');
+      const isLight = document.documentElement.classList.contains('light-theme');
+      localStorage.setItem('specstackle_theme', isLight ? 'light' : 'dark');
+      updateThemeUI();
+    });
+  </script>
+
+</body>
+
+</html>

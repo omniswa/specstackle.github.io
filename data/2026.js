@@ -228,6 +228,36 @@ const phones2026 = [
     battery: "5000 mAh",
     processor: "UNISOC T7100",
     url: "reviews/2026/itel-a100c-full-specs-and-review-2026.html"
+  },
+  {
+    id: "v70",
+    brand: "vivo",
+    model: "V70",
+    year: "2026",
+    price: "~$550.00",
+    battery: "6500 mAh",
+    processor: "Snapdragon 7 Gen 4",
+    url: "reviews/2026/vivo-v70-full-specs-and-review-2026.html"
+  },
+  {
+    id: "note-80",
+    brand: "realme",
+    model: "Note 80",
+    year: "2026",
+    price: "~$80.00",
+    battery: "6300 mAh",
+    processor: "Unisoc T7250",
+    url: "reviews/2026/realme-note-80-full-specs-and-review-2026.html"
+  },
+  {
+    id: "x8d",
+    brand: "HONOR",
+    model: "X8d",
+    year: "2026",
+    price: "~$285.00",
+    battery: "7000 mAh",
+    processor: "Snapdragon 6s 4G Gen 2",
+    url: "reviews/2026/honor-x8d-full-specs-and-review-2026.html"
   }
 ];
 

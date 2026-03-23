@@ -88,6 +88,26 @@ const phones2025 = [
     battery: "5000 mAh",
     processor: "Exynos 1580",
     url: "reviews/2025/samsung-galaxy-a56-full-specs-and-review-2026.html"
+  },
+  {
+    id: "x9c-5g",
+    brand: "HONOR",
+    model: "X9c 5G",
+    year: "2025",
+    price: "~$299.00",
+    battery: "6600 mAh",
+    processor: "Snapdragon 6 Gen 1",
+    url: "reviews/2025/honor-x9c-5g-full-specs-and-review-2026.html"
+  },
+  {
+    id: "redmi-note-14-4g",
+    brand: "Xiaomi",
+    model: "Redmi Note 14 4G",
+    year: "2025",
+    price: "~$150.00",
+    battery: "5500 mAh",
+    processor: "Helio G99 Ultra",
+    url: "reviews/2025/redmi-note-14-4g-full-specs-and-review-2026.html"
   }
 ];
 

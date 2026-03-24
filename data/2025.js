@@ -108,6 +108,26 @@ const phones2025 = [
     battery: "5500 mAh",
     processor: "Helio G99 Ultra",
     url: "reviews/2025/redmi-note-14-4g-full-specs-and-review-2026.html"
+  },
+  {
+    id: "redmi-note-14-pro-5g",
+    brand: "Xiaomi",
+    model: "Redmi Note 14 Pro 5G",
+    year: "2025",
+    price: "~$300.00",
+    battery: "5110 mAh",
+    processor: "Dimensity 7300 Ultra",
+    url: "reviews/2025/redmi-note-14-pro-5g-full-specs-and-review-2026.html"
+  },
+  {
+    id: "redmi-note-14-pro-5g",
+    brand: "Xiaomi",
+    model: "Redmi Note 14 Pro+ 5G",
+    year: "2025",
+    price: "~$400.00",
+    battery: "5110 mAh",
+    processor: "Snapdragon 7s Gen 3",
+    url: "reviews/2025/redmi-note-14-pro-plus-5g-full-specs-and-review-2026.html"
   }
 ];
 

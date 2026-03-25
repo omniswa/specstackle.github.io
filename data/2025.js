@@ -128,6 +128,26 @@ const phones2025 = [
     battery: "5110 mAh",
     processor: "Snapdragon 7s Gen 3",
     url: "reviews/2025/redmi-note-14-pro-plus-5g-full-specs-and-review-2026.html"
+  },
+  {
+    id: "x7",
+    brand: "POCO",
+    model: "X7",
+    year: "2025",
+    price: "~$200.00",
+    battery: "5110 mAh",
+    processor: "Dimensity 7300-Ultra",
+    url: "reviews/2025/poco-x7-full-specs-and-review-2026.html"
+  },
+  {
+    id: "x7-pro",
+    brand: "POCO",
+    model: "X7 Pro",
+    year: "2025",
+    price: "~$300.00",
+    battery: "6000 mAh",
+    processor: "Dimensity 8400 Ultra",
+    url: "reviews/2025/poco-x7-pro-full-specs-and-review-2026.html"
   }
 ];
 

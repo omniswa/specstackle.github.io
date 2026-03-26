@@ -90,7 +90,11 @@ function handleFilters() {
   // Filter the full list
   const filtered = currentPhones.filter(phone => {
     const matchesSearch = phone.model.toLowerCase().includes(searchTerm) ||
-      phone.processor.toLowerCase().includes(searchTerm);
+      phone.brand.toLowerCase().includes(searchTerm) ||
+      phone.processor.toLowerCase().includes(searchTerm) ||
+      phone.battery.toLowerCase().includes(searchTerm) ||
+      phone.model.toLowerCase().includes(searchTerm) ||
+      phone.price.toLowerCase().includes(searchTerm);
     const matchesBrand = selectedBrand === 'all' || phone.brand.toLowerCase().includes(selectedBrand.toLowerCase());
     return matchesSearch && matchesBrand;
   });

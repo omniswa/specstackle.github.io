@@ -148,6 +148,26 @@ const phones2025 = [
     battery: "6000 mAh",
     processor: "Dimensity 8400 Ultra",
     url: "reviews/2025/poco-x7-pro-full-specs-and-review-2026.html"
+  },
+  {
+    id: "galaxy-s25",
+    brand: "Samsung",
+    model: "Galaxy S25",
+    year: "2025",
+    price: "~$799.00",
+    battery: "4000 mAh",
+    processor: "Snapdragon 8 Elite for Galaxy",
+    url: "reviews/2025/samsung-galaxy-s25-full-specs-and-review-2026.html"
+  },
+  {
+    id: "galaxy-s25-plus",
+    brand: "Samsung",
+    model: "Galaxy S25+ (Plus)",
+    year: "2025",
+    price: "~$999.00",
+    battery: "4900 mAh",
+    processor: "Snapdragon 8 Elite for Galaxy",
+    url: "reviews/2025/samsung-galaxy-s25-plus-full-specs-and-review-2026.html"
   }
 ];
 

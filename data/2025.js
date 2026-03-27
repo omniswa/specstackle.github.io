@@ -168,6 +168,26 @@ const phones2025 = [
     battery: "4900 mAh",
     processor: "Snapdragon 8 Elite for Galaxy",
     url: "reviews/2025/samsung-galaxy-s25-plus-full-specs-and-review-2026.html"
+  },
+  {
+    id: "galaxy-s25-ultra",
+    brand: "Samsung",
+    model: "Galaxy S25 Ultra",
+    year: "2025",
+    price: "~$1,299.00",
+    battery: "5000 mAh",
+    processor: "Snapdragon 8 Elite for Galaxy",
+    url: "reviews/2025/samsung-galaxy-s25-ultra-full-specs-and-review-2026.html"
+  },
+  {
+    id: "reno13",
+    brand: "Oppo",
+    model: "Reno13",
+    year: "2025",
+    price: "~$410.00",
+    battery: "5600 mAh",
+    processor: "Dimensity 8350",
+    url: "reviews/2025/oppo-reno13-full-specs-and-review-2026.html"
   }
 ];
 

@@ -5,25 +5,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>SpecsTackle | Browse Latest Smartphone Releases and Specifications</title>
-  <meta name="description" content="One stop place to browse latest smartphone releases, specifications and features. Filter by brand, year, and specs to find your perfect device.">
-  <link rel="canonical" href="https://specstackle.top">
+  <title>SpecsTackle | Your Daily Source of Tech News and Updates</title>
+  <meta name="description" content="Latest tech news and updates on gadgets, AI, cybersecurity, and digital trends—fast, clear, and up to date.">
+  <link rel="canonical" href="https://specstackle.top/blogs/index.html">
   <meta name="robots" content="index, follow">
 
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://specstackle.top">
-  <meta property="og:title" content="SpecsTackle | Browse Latest Smartphone Releases and Specifications">
-  <meta property="og:description" content="Browse latest smartphone releases, specifications and features.">
+  <meta property="og:title" content="SpecsTackle | Your Daily Source of Tech News and Updates">
+  <meta property="og:description" content="Latest tech news and updates on gadgets, AI, cybersecurity, and digital trends.">
   <meta property="og:image" content="https://specstackle.top/images/og-image.webp">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="SpecsTackle | Browse Latest Smartphone Releases and Specifications">
-  <meta name="twitter:description" content="Browse latest smartphone releases, specifications and features.">
+  <meta name="twitter:title" content="SpecsTackle | Your Daily Source of Tech News and Updates">
+  <meta name="twitter:description" content="Latest tech news and updates on gadgets, AI, cybersecurity, and digital trends.">
   <meta name="twitter:image" content="https://specstackle.top/images/og-image.webp">
 
-  <link rel="icon" href="apple-touch-icon.png" type="image/png">
+  <link rel="icon" href="../apple-touch-icon.png" type="image/png">
   <link rel="preload" href="fonts/outfit.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="styles/index.css">
+  <link rel="stylesheet" href="../styles/blog-index.css">
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -54,7 +54,7 @@
     <nav>
       <a href="#" class="logo">SPECSTACKLE</a>
       <div class="nav-links">
-        <a href="blogs/index.html">Blogs</a>
+        <a href="../index.html">Phones</a>
         <a href="#">Surprise</a>
       </div>
     </nav>
@@ -63,37 +63,28 @@
   <main>
     <section class="hero">
       <h1>SPECSTACKLE</h1>
-      <p>Your one stop place for the latest smartphone news and releases.</p>
+      <p>Your one stop place for the latest technology news and updates.</p>
     </section>
 
     <section class="controls-container">
-      <input type="search" id="searchInput" class="search-input" placeholder="Search devices (e.g. C83, Galaxy)...">
+      <input type="search" id="searchInput" class="search-input" placeholder="Search topic (e.g. AI News)...">
 
-      <select id="brandFilter" class="filter-select" aria-label="Select Brand">
-        <option value="all">All Brands</option>
-        <option value="Realme">Realme</option>
-        <option value="Samsung">Samsung</option>
-        <option value="Apple">Apple</option>
-        <option value="Xiaomi">Xiaomi</option>
-        <option value="Huawei">Huawei</option>
-        <option value="Oppo">Oppo</option>
-        <option value="Infinix">Infinix</option>
-        <option value="Itel">Itel</option>
-        <option value="Honor">Honor</option>
-        <option value="Poco">Poco</option>
-        <option value="Nothing">Nothing</option>
-        <option value="Google">Google</option>
-        <option value="Nubia">Nubia</option>
-        <option value="Motorola">Motorola</option>
+      <select id="topicFilter" class="filter-select" aria-label="Select Topic">
+        <option value="all">All Topics</option>
+        <option value="Technology News">Technology News</option>
+        <option value="Consumer Tech">Consumer Tech</option>
+        <option value="Artificial Intelligence">Artificial Intelligence</option>
+        <option value="Security & Privacy">Security & Privacy</option>
+        <option value="Softwares & Tools">Softwares & Tools</option>
+        <option value="Tech Tips & Guides">Tech Guides & Tips</option>
       </select>
 
       <select id="yearFilter" class="filter-select" aria-label="Select Year">
         <option value="2026" selected>Year 2026</option>
-        <option value="2025">Year 2025</option>
       </select>
     </section>
 
-    <section class="grid-container" id="phoneGrid">
+    <section class="grid-container" id="blogGrid">
       <!-- Skeleton loaders always in DOM, hidden by default -->
       <div class="skeleton-card"></div>
       <div class="skeleton-card"></div>
@@ -120,10 +111,10 @@
 
   <footer>
     <div class="f-links">
-      <a href="pages/about.html">About</a>
-      <a href="pages/contact.html">Contact</a>
-      <a href="pages/privacy.html">Privacy</a>
-      <a href="pages/terms.html">Terms</a>
+      <a href="../pages/about.html">About</a>
+      <a href="../pages/contact.html">Contact</a>
+      <a href="../pages/privacy.html">Privacy</a>
+      <a href="../pages/terms.html">Terms</a>
     </div>
 
     <p class="copy">&copy; <span id="year"></span> SPECSTACKLE. ALL RIGHTS RESERVED.</p>
@@ -134,7 +125,7 @@
     </div>
   </footer>
 
-  <script type="module" src="scripts/index.js" defer></script>
+  <script type="module" src="../scripts/blog-index.js" defer></script>
 </body>
 
 </html>

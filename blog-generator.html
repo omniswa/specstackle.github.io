@@ -1,14 +1,68 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" class="dark-theme">
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Post Generator | SpecsTackle</title>
+  <link rel="stylesheet" href="styles/blog-generator.css">
+  <link rel="icon" href="apple-touch-icon.png" type="image/png">
+
+  <!-- marked.js for Markdown parsing -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 
 <body>
 
+  <header>
+    <nav>
+      <a href="#" class="logo">SPECSTACKLE GENERATOR</a>
+    </nav>
+  </header>
+
+  <main class="blog-container">
+
+    <form id="generatorForm">
+      <div class="form-group">
+        <label for="postTitle">Article Title</label>
+        <input type="text" id="postTitle" placeholder="e.g., Must-Have Browser Extensions for 2026" required>
+      </div>
+
+      <div class="form-group">
+        <label for="postYear">Folder Year</label>
+        <select id="postYear" required>
+          <option value="2026" selected>2026</option>
+          <option value="2027">2027</option>
+          <option value="2028">2028</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="postMeta">Meta Description</label>
+        <textarea id="postMeta" placeholder="A short description that will appear in search results and social cards..." required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="postContent">Markdown Content</label>
+        <textarea id="postContent" placeholder="Write your content in Markdown here..." required></textarea>
+      </div>
+
+      <div class="btn-group">
+        <button type="submit" class="btn-primary">Generate & Download HTML</button>
+        <button type="button" id="btnClear" class="btn-danger">Clear Form</button>
+      </div>
+    </form>
+
+    <section class="output-section" id="outputSection">
+      <div class="output-header">
+        <h3>JSON Metadata</h3>
+        <button id="btnCopyJson" class="btn-secondary">Copy JSON</button>
+      </div>
+      <pre><code id="jsonPreview"></code></pre>
+    </section>
+  </main>
+
+  <script src="scripts/blog-generator.js" defer></script>
 </body>
 
 </html>

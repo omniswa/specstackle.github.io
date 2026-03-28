@@ -188,6 +188,26 @@ const phones2025 = [
     battery: "5600 mAh",
     processor: "Dimensity 8350",
     url: "reviews/2025/oppo-reno13-full-specs-and-review-2026.html"
+  },
+  {
+    id: "reno13-pro",
+    brand: "OPPO",
+    model: "Reno13 Pro",
+    year: "2025",
+    price: "~$600.00",
+    battery: "5800 mAh",
+    processor: "Dimensity 8350",
+    url: "reviews/2025/oppo-reno13-pro-full-specs-and-review-2026.html"
+  },
+  {
+    id: "reno13-f-5g",
+    brand: "OPPO",
+    model: "Reno13 F (5G)",
+    year: "2025",
+    price: "~$399.00",
+    battery: "5800 mAh",
+    processor: "Snapdragon 6 Gen 1",
+    url: "reviews/2025/oppo-reno13-f-full-specs-and-review-2026.html"
   }
 ];
 

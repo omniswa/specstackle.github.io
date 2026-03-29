@@ -38,22 +38,37 @@
       </div>
 
       <div class="form-group">
+        <label for="postCategory">Category</label>
+        <select id="postCategory" required>
+          <option value="Technology News">Technology News</option>
+          <option value="Consumer Tech">Consumer Tech</option>
+          <option value="Artificial Intelligence">Artificial Intelligence</option>
+          <option value="Security & Privacy">Security & Privacy</option>
+          <option value="Softwares & Tools">Softwares & Tools</option>
+          <option value="Guides & Tutorials">Guides & Tutorials</option>
+        </select>
+      </div>
+
+      <div class="form-group">
         <label for="postMeta">Meta Description</label>
         <textarea id="postMeta" placeholder="A short description that will appear in search results and social cards..." required></textarea>
       </div>
 
       <div class="form-group">
-        <label for="postContent">Markdown Content</label>
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 8px;">
+          <label for="postContent" style="margin-bottom: 0;">Markdown Content</label>
+          <span id="wordCountDisplay" style="font-size: 0.8rem; color: var(--accent); font-weight: 600;">0 Words</span>
+        </div>
         <textarea id="postContent" placeholder="Write your content in Markdown here..." required></textarea>
       </div>
 
       <div class="btn-group">
-        <button type="submit" class="btn-primary">Generate & Download HTML</button>
         <button type="button" id="btnClear" class="btn-danger">Clear Form</button>
+        <button type="submit" class="btn-primary">Download HTML</button>
       </div>
     </form>
 
-    <section class="output-section" id="outputSection">
+    <section class="output-section active" id="outputSection">
       <div class="output-header">
         <h3>JSON Metadata</h3>
         <button id="btnCopyJson" class="btn-secondary">Copy JSON</button>

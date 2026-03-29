@@ -2,13 +2,55 @@ document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("generatorForm");
   const btnClear = document.getElementById("btnClear");
   const btnCopyJson = document.getElementById("btnCopyJson");
-  const outputSection = document.getElementById("outputSection");
   const jsonPreview = document.getElementById("jsonPreview");
+  const categoryInput = document.getElementById("postCategory");
+  const wordCountDisplay = document.getElementById("wordCountDisplay");
+  const postContent = document.getElementById("postContent");
 
   // Set Display Date
   const today = new Date();
   const isoDate = today.toISOString();
   const displayDate = today.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+
+  // --- Utility: Live JSON Preview ---
+  function updateJsonPreview() {
+    const title = document.getElementById("postTitle").value.trim() || "Article Title";
+    const year = document.getElementById("postYear").value;
+    const meta = document.getElementById("postMeta").value.trim() || "Meta description...";
+    const category = categoryInput.value;
+    const markdown = document.getElementById("postContent").value.trim();
+
+    // Generate Slug
+    const slug = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+    const currentOrigin = window.location.origin !== "null" ? window.location.origin : "https://specstackle.top";
+
+    // Process Content
+    const processedContentHtml = processHtmlContent(markdown);
+
+    // Calculate Word Count
+    const wordCount = markdown ? markdown.split(/\s+/).length : 0;
+    wordCountDisplay.textContent = `${wordCount} Words`;
+
+    // Calculate Reading Time (for the JSON)
+    const readingTime = Math.max(1, Math.ceil(wordCount / 200));
+    
+    const jsonOutput = `{
+  title: "${title}",
+  category: "${category}",
+  published: "${displayDate}",
+  excerpt: "${meta}",
+  link: "${year}/${slug}.html"
+}`;
+    jsonPreview.textContent = jsonOutput;
+  }
+
+  // Attach listeners for real-time update
+  form.querySelectorAll('input, select, textarea').forEach(input => {
+    input.addEventListener('input', updateJsonPreview);
+  });
+
+  // Initialize preview on load
+  updateJsonPreview();
 
   // Apply Smart Quotes ONLY to text nodes
   function applySmartQuotes(node) {
@@ -66,23 +108,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
-
-    // Collect inputs
-    const title = document.getElementById("postTitle").value.trim();
-    const year = document.getElementById("postYear").value;
-    const meta = document.getElementById("postMeta").value.trim();
-    const markdown = document.getElementById("postContent").value.trim();
-
-    // Generate Slug
-    const slug = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
-    const currentOrigin = window.location.origin !== "null" ? window.location.origin : "https://specstackle.top";
-
-    // Process Content
-    const processedContentHtml = processHtmlContent(markdown);
-
-    // Calculate Reading Time (rough estimate based on word count)
-    const wordCount = markdown.split(/\s+/).length;
-    const readingTime = Math.max(1, Math.ceil(wordCount / 200));
 
     // Generate Final HTML Structure based on Blog.html template
     let finalHtml = `<!DOCTYPE html>
@@ -173,7 +198,7 @@ document.addEventListener("DOMContentLoaded", () => {
   <main class="blog-container">
     <article class="blog-content">
       <section class="blog-header">
-        <span class="blog-category">Softwares & Tools</span>
+        <span class="blog-category">${category}</span>
         <h1>${title}</h1>
         <div class="blog-meta">
           <span>
@@ -253,23 +278,20 @@ document.addEventListener("DOMContentLoaded", () => {
     a.click();
     document.body.removeChild(a);
     URL.revokeObjectURL(downloadUrl);
-
-    // Render JSON String exactly as requested
-    const jsonOutput = `{
-          title: "${title}",
-          published: "${displayDate}",
-          excerpt: "${meta}",
-          link: "blogs/${year}/${slug}.html"
-        }`;
-    jsonPreview.textContent = jsonOutput;
-    outputSection.classList.add("active");
   });
 
   // Clear Form functionality
   btnClear.addEventListener("click", () => {
+    const hasContent = Array.from(form.querySelectorAll('input, textarea'))
+      .some(el => el.value.trim() !== "");
+
+    if (hasContent) {
+      const confirmClear = confirm("Are you sure you want to clear the form? Your progress will be lost.");
+      if (!confirmClear) return;
+    }
+
     form.reset();
-    outputSection.classList.remove("active");
-    jsonPreview.textContent = "";
+    updateJsonPreview();
   });
 
   // Copy JSON functionality

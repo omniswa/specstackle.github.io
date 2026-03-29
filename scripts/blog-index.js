@@ -6,6 +6,7 @@ const yearFilter = document.getElementById('yearFilter');
 const paginationContainer = document.getElementById('pagination');
 document.getElementById("year").innerHTML = new Date().getFullYear();
 const arrowIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>`;
+const dateIcon = `<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>`;
 
 // --- Global State ---
 let currentPage = 1;
@@ -49,27 +50,22 @@ function renderBlogs(data) {
 
   data.forEach(blog => {
     const card = document.createElement('a');
-    card.href = blog.url;
+    card.href = blog.link; // Updated to .link
     card.className = 'card';
+
+    // Updated HTML structure for the new data format
     card.innerHTML = `
           <div class="card-header">
-            <span class="brand-tag">${blog.brand}</span>
-            <span class="year-tag">${blog.year}</span>
+            <span class="category-tag">${blog.category}</span>
           </div>
-          <h2 class="card-title">${blog.model}</h2>
           
-          <div class="specs-wrapper">
-            <div class="spec-pill">
-              <span>${blog.processor}</span>
-            </div>
-            <div class="spec-pill">
-              <span>${blog.battery}</span>
-            </div>
-          </div>
+          <h2 class="card-title">${blog.title}</h2>
+          
+          <p class="card-excerpt">${blog.excerpt}</p>
 
           <div class="card-footer">
-            <span class="price">${blog.price}</span>
-            <span class="view-btn">Read ${arrowIcon}</span>
+            <span class="published-tag">${dateIcon} ${blog.published}</span>
+            <span class="view-btn">Read Article ${arrowIcon}</span>
           </div>
         `;
     blogGrid.appendChild(card);
@@ -79,18 +75,18 @@ function renderBlogs(data) {
 // --- Filter Logic ---
 function handleFilters() {
   const searchTerm = searchInput.value.toLowerCase();
-  const selectedTopic = topicFilter.value;
+  const selectedTopic = topicFilter.value.toLowerCase();
 
-  // Filter the full list
+  // Filter the full list based on new properties
   const filtered = currentBlogs.filter(blog => {
-    const matchesSearch = blog.model.toLowerCase().includes(searchTerm) ||
-      blog.brand.toLowerCase().includes(searchTerm) ||
-      blog.processor.toLowerCase().includes(searchTerm) ||
-      blog.battery.toLowerCase().includes(searchTerm) ||
-      blog.model.toLowerCase().includes(searchTerm) ||
-      blog.price.toLowerCase().includes(searchTerm);
-    const matchesTopic = selectedTopic === 'all' || 
-    blog.brand.toLowerCase().includes(selectedTopic.toLowerCase());
+    const matchesSearch =
+      blog.title.toLowerCase().includes(searchTerm) ||
+      blog.excerpt.toLowerCase().includes(searchTerm) ||
+      blog.category.toLowerCase().includes(searchTerm);
+
+    // Since your new data lacks a explicit "topic" key, this checks if the 
+    // topic dropdown value exists anywhere in the title or excerpt.
+    const matchesTopic = selectedTopic === 'all' || blog.category.toLowerCase().includes(selectedTopic);
     return matchesSearch && matchesTopic;
   });
 

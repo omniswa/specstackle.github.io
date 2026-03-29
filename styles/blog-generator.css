@@ -153,11 +153,12 @@ button {
 }
 
 /* Output JSON Preview Area */
+/* Update this block in your CSS */
 .output-section {
   margin-top: 56px;
   border-top: 1px solid var(--border);
   padding-top: 40px;
-  display: none;
+  display: block; /* Changed from none to block */
 }
 
 .output-section.active {

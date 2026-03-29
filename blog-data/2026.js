@@ -1,13 +1,10 @@
 const blogs2026 = [
   {
-    id: "x8d",
-    brand: "HONOR",
-    model: "X8d",
-    year: "2026",
-    price: "~$285.00",
-    battery: "7000 mAh",
-    processor: "Snapdragon 6s 4G Gen 2",
-    url: "reviews/2026/honor-x8d-full-specs-and-review-2026.html"
+    title: "10 Essential Cybersecurity Habits to Protect Your Digital Identity",
+    published: "March 29, 2026",
+    category: "Softwares & Tools",
+    excerpt: "Master these essential cybersecurity habits to protect your digital identity, prevent data theft, and stay safe from modern online threats.",
+    link: "2026/10-essential-cybersecurity-habits-to-protect-your-digital-identity.html"
   }
 ];
 
